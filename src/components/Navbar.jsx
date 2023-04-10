@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { close, MTRIPI, menu } from "../assets";
 import { navLinks } from "../constants";
 
@@ -10,7 +10,6 @@ const Navbar = () => {
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
       <img src={MTRIPI} alt="mtripilogo" className="w-[124px] h-[32px]" />
-
       <ul className="list-none sm:flex hidden justify-center items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
@@ -25,8 +24,10 @@ const Navbar = () => {
         ))}
       </ul>
       <button className="text-white bg-emerald-600 p-3 xs:hidden lg:block ">
-        Get Started
+          {" "}
+          <Link to="/login"> Get Started </Link>{" "}
       </button>
+      ;
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
           src={toggle ? close : menu}
