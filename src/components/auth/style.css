@@ -1,0 +1,98 @@
+
+/* common */
+p {
+  opacity: 0.7;
+}
+
+/* Log in page style starts here*/
+.main-login-section {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+}
+/* left part */
+.main-login-section .left {
+  width: 30%;
+}
+/* form styling */
+.main-login-section .left form {
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+/* styling the inputs */
+.main-login-section .left form input {
+  border: 0.02em solid #555;
+  padding: 0.5em;
+  margin: 1em 0;
+  border-radius: 0.5em;
+  outline: none;
+}
+
+/* the div wich has the remember checkbox and the forget pass link */
+.main-login-section .left .forgetPass {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 1em;
+  align-items: center;
+}
+/* forhet password link */
+.main-login-section .left .forgetPass .childTwo {
+  opacity: 0.6;
+  font-size: small;
+  font-weight: 600;
+}
+
+/* right part img styling */
+.main-login-section .right {
+  width: 38%;
+}
+/* don't have an account text */
+.main-login-section .left .dontHaveAcc {
+  opacity: 0.8;
+  font-weight: 500;
+}
+/* the sign up link */
+.main-login-section .left .dontHaveAcc span {
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+/*  Log in page style ends here */
+
+/* Sign up page style starts here  */
+.main-signup-section {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+}
+.main-signup-section .left {
+  width: 40%;
+}
+.main-signup-section .right {
+  width: 30%;
+}
+/* form styling */
+.main-signup-section .right form {
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+/* styling the inputs */
+.main-signup-section .right form input {
+  border: 0.02em solid #555;
+  padding: 0.5em;
+  margin: 1em 0;
+  border-radius: 0.5em;
+  outline: none;
+}
+.main-signup-section .right .Help{
+    opacity: .7;
+    margin-left: .5em;
+}
