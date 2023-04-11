@@ -2,7 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Pic from "../../assets/authIllustrations/loginDude.png";
 import "./style.css";
+import { useState } from 'react';
+import AuthUser from './AuthUser'; 
+
 const Login = () => {
+  const {http, setToken} = AuthUser();
+    const [email,setemail]=useState();
+    const [password,setpassword]=useState();
+    const submitForm =()=>{
+        http.post('/login',{email:email,password:password}).then((res)=>{
+            setToken(res.data.user,res.data.access_token);
+    })
+    }
+
   return (
     <section className="main-login-section">
       {/* left */}
@@ -10,13 +22,14 @@ const Login = () => {
         <h2 className="welcomeHeading">Welcome Back !</h2>
         <p>Log in your account ...</p>
         {/* form start */}
-        <form action="/">
+        <form >
           <label htmlFor="Email">Your Email</label>
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Example@gmail.com"
+            onChange={e=>setemail(e.target.value)}
           />
 
           {/* email input ends / pass input starts here */}
@@ -27,6 +40,7 @@ const Login = () => {
             name="password"
             id="password"
             placeholder="Password"
+            onChange={e=>setpassword(e.target.value)}
           />
 
           {/* pass input ends here */}
@@ -42,7 +56,7 @@ const Login = () => {
               <Link to="/forgetpass"> Forget Password ? </Link>
             </div>
           </div>
-          <button className="primaryBtn" type="submit">
+          <button className="primaryBtn" type="button" onClick={submitForm}>
             Login
           </button>
         </form>

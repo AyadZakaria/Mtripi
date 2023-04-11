@@ -2,8 +2,38 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { close, MTRIPI, menu } from "../assets";
 import { navLinks } from "../constants";
+import React, { useEffect} from 'react';
+import AuthUser from './auth/AuthUser';
 
 const Navbar = () => {
+  const {token, logout} = AuthUser();
+  const LogUser =()=>{
+    if(token != undefined){
+      logout();
+    }
+  }
+  const {http} = AuthUser();
+  const [userdetail,setUserdetail]= useState();
+
+  useEffect(()=>{
+    fetchUserDetail();
+
+  },[]);
+   const fetchUserDetail =()=>{
+    http.post('/me').then((res)=>{
+        setUserdetail(res.data);
+    })
+   };
+
+   function renderElement(){
+    if(userdetail){
+      return  <p>{userdetail.name}</p>
+        
+    }else{
+      return <p>loading......</p>
+    }
+   };
+
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
@@ -27,7 +57,11 @@ const Navbar = () => {
           {" "}
           <Link to="/login"> Get Started </Link>{" "}
       </button>
-      ;
+      {userdetail ? <button className="text-white ml-2 bg-emerald-600 p-3 xs:hidden lg:block " onClick={LogUser}>
+          log out 
+      </button> : <></> }
+      {renderElement()}
+      
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
           src={toggle ? close : menu}
@@ -53,6 +87,7 @@ const Navbar = () => {
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
+            
           </ul>
         </div>
       </div>
