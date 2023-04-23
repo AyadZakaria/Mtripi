@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import AuthUser from './AuthUser';
 import Pic2 from "../../assets/authIllustrations/signupLady.png";
 
@@ -18,6 +18,7 @@ const Signup = () => {
     }
 
   return (
+    <>
     <section className="main-signup-section">
       <div className="left">
         <img src={Pic2} alt="" />
@@ -75,6 +76,7 @@ const Signup = () => {
         </h3>
       </div>
     </section>
+    </>
   );
 };
 
