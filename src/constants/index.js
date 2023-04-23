@@ -20,11 +20,6 @@ export const navLinks = [
     id: "reviews",
     title: "Reviews",
   },
-  {
-    id: "trajet",
-    title: "Trajets",
-  },
-  
 ];
 
 
@@ -51,10 +46,6 @@ export const footerLinks = [
       },
       {
         name: "Review",
-        link: "/",
-      },
-      {
-        name: "Trajets",
         link: "/",
       },
     ],
