@@ -1,27 +1,38 @@
 import React, { useState } from "react";
 
-const FileInput = () => {
+const FileInput = ({ label }) => {
   const [file, setFile] = useState(null);
-  const [preview, setPreview] = useState(null);
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-    setPreview(URL.createObjectURL(e.target.files[0]));
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    setFile(selectedFile);
+    onChange(selectedFile);
+  };
+
+  const handleRemoveFile = () => {
+    setFile(null);
+    onChange(null);
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <label htmlFor="file" className="text-l font-bold m-1">
-        Add Image
-      </label>
-      {preview && <img src={preview} alt="Preview" className="w-[40%] m-2" />}
-      <input
-        type="file"
-        name="file"
-        id="file"
-        className="p-2 text-neutral-800 outline-none rounded-xl w-[70%] m-2"
-        onChange={handleFileChange}
-      />
+    <div className="text-center flex flex-col justify-around p-2 m-2">
+      <label className="font-bold">{label}</label>
+      {file && (
+        <div className="relative">
+          <img
+            src={URL.createObjectURL(file)}
+            alt="file preview"
+            className="w-24 h-24object-cover rounded-md border border-gray-300 m-2"
+          />
+          <button
+            className="absolute top-0 right-0 w-6 h-6 rounded-full bg-green-500 text-white flex justify-center items-center"
+            onClick={handleRemoveFile}
+          >
+            X
+          </button>
+        </div>
+      )}
+      <input type="file" onChange={handleFileChange} />
     </div>
   );
 };
