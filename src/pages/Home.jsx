@@ -10,7 +10,6 @@ import {
   Hero,
   Navbar,
   Reviews,
-  Trajets,
 } from "../components";
 
 const Home = () => {
@@ -33,9 +32,8 @@ const Home = () => {
         <div className={`${styles.boxWidth}`}>
           <Destinations />
           <About />
-          <Faq />
           <Reviews />
-          <Trajets />
+          <Faq />
           <Footer />
         </div>
       </div>
