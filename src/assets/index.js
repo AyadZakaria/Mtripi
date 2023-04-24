@@ -16,7 +16,7 @@ import expert from './icons/leader.png'
 import detail from './icons/detail.png'
 import service from './icons/service.png'
 import consulting from './icons/consulting.png'
-
+import user from './authIllustrations/user.png'
 
 export {
   airbnb,
@@ -37,4 +37,5 @@ export {
   detail,
   service,
   consulting,
+  user,
 };

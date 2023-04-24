@@ -16,7 +16,7 @@
   --primary-color: #92e3a9;
   --secondary-color: rgb(247, 247, 247);
   --white: #fff;
-  --black:#000;
+  --black: #000;
 }
 .welcomeHeading {
   font-size: xx-large;
@@ -41,7 +41,7 @@
   border-radius: 0.5em;
   background-color: transparent;
   padding: 0.3em;
-  color: var(--black-gradient);
+  color: var(--primary-color);
   font-weight: 650;
   font-size: large;
 }
