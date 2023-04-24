@@ -11,23 +11,19 @@ import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import banner from "./banner.jpg";
-import teem from './teem.jpg'
-import expert from './icons/leader.png'
-import detail from './icons/detail.png'
-import service from './icons/service.png'
-import consulting from './icons/consulting.png'
-<<<<<<< HEAD
-import user from './authIllustrations/user.png'
-=======
-import quotes from "./quotes.svg"
+import teem from "./teem.jpg";
+import expert from "./icons/leader.png";
+import detail from "./icons/detail.png";
+import service from "./icons/service.png";
+import consulting from "./icons/consulting.png";
+import user from "./authIllustrations/user.png";
+import quotes from "./quotes.svg";
 import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
-
->>>>>>> 96082b2cbe6a9a2211af07477cadb4ffe1b45143
 
 export {
   airbnb,
@@ -48,15 +44,12 @@ export {
   detail,
   service,
   consulting,
-<<<<<<< HEAD
   user,
-=======
   quotes,
-  people01, 
-  people02, 
+  people01,
+  people02,
   people03,
   send,
   shield,
   star,
->>>>>>> 96082b2cbe6a9a2211af07477cadb4ffe1b45143
 };

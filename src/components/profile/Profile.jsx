@@ -3,6 +3,7 @@ import Navbar from "../Navbar";
 import { useState, useEffect } from "react";
 import AuthUser from ".././auth/AuthUser";
 import { user } from "../../assets";
+import FileInput from "./FileInput";
 
 const Profile = () => {
   const { http } = AuthUser();
@@ -39,7 +40,7 @@ const Profile = () => {
       </div>
       <div className="links m-3 cursor-pointer p-4 h-[10vh] text-dimWhite text-xl flex justify-center">
         <ul className="flex space-x-4 ">
-          <li className={`${activeLink == 'Edit' && " text-stone-600" }`}>
+          <li className={`${activeLink == "Edit" && " text-stone-600"}`}>
             {" "}
             <a
               onClick={() => {
@@ -50,7 +51,7 @@ const Profile = () => {
             </a>{" "}
           </li>{" "}
           <p>/</p>
-          <li className={`${activeLink == 'Create' && "text-stone-600" }`}>
+          <li className={`${activeLink == "Create" && "text-stone-600"}`}>
             <a
               onClick={() => {
                 setActiveLink("Create");
@@ -110,16 +111,7 @@ const Profile = () => {
       ) : (
         <div className="text-dimWhite w-1/2 m-auto">
           <form className="flex flex-col items-center">
-            <label className="text-l font-bold m-1" htmlFor="pic">
-              {" "}
-              Picture{" "}
-            </label>
-            <input
-              className="p-2 text-neutral-800 outline-none rounded-xl w-[70%] m-2"
-              name="pic"
-              id="pic"
-              type="file"
-            />
+            <FileInput />
             <label className="text-l font-bold m-1" htmlFor="desc">
               {" "}
               Place Description{" "}
