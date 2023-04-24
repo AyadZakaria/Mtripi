@@ -16,6 +16,13 @@ import expert from './icons/leader.png'
 import detail from './icons/detail.png'
 import service from './icons/service.png'
 import consulting from './icons/consulting.png'
+import quotes from "./quotes.svg"
+import people01 from "./people01.png";
+import people02 from "./people02.png";
+import people03 from "./people03.png";
+import send from "./Send.svg";
+import shield from "./Shield.svg";
+import star from "./Star.svg";
 
 
 export {
@@ -37,4 +44,11 @@ export {
   detail,
   service,
   consulting,
+  quotes,
+  people01, 
+  people02, 
+  people03,
+  send,
+  shield,
+  star,
 };
