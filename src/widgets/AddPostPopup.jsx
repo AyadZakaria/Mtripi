@@ -1,5 +1,5 @@
 import React from "react";
-import FileInput from '../../widgets/FileInput'
+import FileInput from './FileInput'
 
 const AddPost = () => {
   return (
