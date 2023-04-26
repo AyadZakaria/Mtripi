@@ -50,7 +50,10 @@ const Navbar = () => {
             } absolute left-3/4 top-10 bg-emerald-600 p-4 rounded-xl z-10`}
           >
             <button className="primaryBtn Profile">
-              <Link to="Profile">Profile</Link>
+              <Link to="/Profile">Profile</Link>
+            </button>
+            <button className="primaryBtn Profile">
+              <Link to="/Settings">Settings</Link>
             </button>
             <button className="secondaryBtn" onClick={LogUser}>
               log out
