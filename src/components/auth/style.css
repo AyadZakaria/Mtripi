@@ -82,7 +82,6 @@ p {
   margin: 2em 0;
   display: flex;
   flex-direction: column;
-  width: 80%;
 }
 /* styling the inputs */
 .main-signup-section .right form input {
