@@ -43,7 +43,7 @@ const Navbar = () => {
   };
 
   function renderElement() {
-    if (userdetail) {
+    if (!userdetail) {
       return (
         <>
           {" "}
@@ -54,7 +54,7 @@ const Navbar = () => {
           >
             <img src={user} />
             <p className="text-white ml-2 font-bold text-xl">
-              {userdetail.name}
+              {/* {userdetail.name} */}
             </p>
             <div
               className={`userActions ${
