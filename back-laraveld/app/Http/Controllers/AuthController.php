@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -36,7 +37,7 @@ class AuthController extends Controller
 
     public function registre()
     {
-        $credentials = request(['name','email', 'password']);
+        $credentials = request(['fName','lName','email', 'password','instagram','phone']);
         $credentials['password'] = bcrypt($credentials['password']);
         User::create($credentials);
 
@@ -91,4 +92,7 @@ class AuthController extends Controller
             'user' => auth()->user(),
         ]);
     }
+
+    
+    
 }
