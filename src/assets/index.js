@@ -24,6 +24,7 @@ import people03 from "./people03.png";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
+import upload from './upload.jpg'
 
 export {
   airbnb,
@@ -52,4 +53,5 @@ export {
   send,
   shield,
   star,
+  upload,
 };

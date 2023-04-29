@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthUser from "./AuthUser";
-import Pic2 from "../../assets/authIllustrations/signupLady.png";
+import Pic2 from "../assets/authIllustrations/signupLady.png";
 import axios from "axios";
 
 

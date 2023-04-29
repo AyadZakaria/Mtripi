@@ -1,9 +1,10 @@
 import React from "react";
-import Navbar from "../Navbar";
+import Navbar from "../../components/Navbar";
 import { useState, useEffect } from "react";
-import AuthUser from ".././auth/AuthUser";
+import AuthUser from "../../auth/AuthUser";
 import { user } from "../../assets";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
+import styles from "../../style";
 
 const Profile = () => {
   const { http } = AuthUser();
@@ -25,12 +26,12 @@ const Profile = () => {
   const fetchUserDetail = () => {
     http.post("/me").then((res) => {
       setUserdetail(res.data);
-        setid(res.data.id);
-         setFName(res.data.fName);
-         setLName(res.data.lName);
-         setPhone(res.data.phone);
-         setInstagram(res.data.instagram);
-         setPassword(res.data.password);
+      setid(res.data.id);
+      setFName(res.data.fName);
+      setLName(res.data.lName);
+      setPhone(res.data.phone);
+      setInstagram(res.data.instagram);
+      setPassword(res.data.password);
       setEmail(res.data.email);
     });
   };
@@ -41,20 +42,30 @@ const Profile = () => {
     day: "numeric",
   };
 
-
   const submitForm = () => {
-    http.put(`/user/${id}`, { email: email, password: password, fName: fName , lName:lName , instagram:instagram, phone:phone, description:description }).then((res) => {
-      navigate('/');
-    });
-};
-
-  
-
-
+    http
+      .put(`/user/${id}`, {
+        email: email,
+        password: password,
+        fName: fName,
+        lName: lName,
+        instagram: instagram,
+        phone: phone,
+        description: description,
+      })
+      .then((res) => {
+        navigate("/");
+      });
+  };
 
   return (
-    <div className="bg-[#0F1014] p-3 ">
-      <Navbar />
+    <div className={`${styles.containerHeight} bg-[#0F1014] h-[100%] p-3 `}>
+      <div className={`${styles.paddingX} ${styles.flexCenter} `}>
+        <div className={`${styles.boxWidth}`}>
+          <Navbar />
+        </div>
+      </div>
+
       <div className="text-dimWhite text-center h-[20vh] w-9/12 m-auto rounded-lg pt-[6vh]  bg-slate-800 ">
         <p>{dateTime.toLocaleDateString("en-US", options)}</p>
         <h2 className="text-3xl">
@@ -66,7 +77,7 @@ const Profile = () => {
           <img src={user} alt="Avatar" className="w-[100%] " />
         </div>
 
-        <div className="mt-6" >
+        <div className="mt-6">
           <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 w-full mb-6 group">
               <input
@@ -175,7 +186,7 @@ const Profile = () => {
               name="password"
               id="password"
               value={password}
-              onChange={e=>setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               class="block py-2.5 px-0 w-full text-sm text-dimWhite bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               required
             />
@@ -186,9 +197,10 @@ const Profile = () => {
               Password
             </label>
           </div>
-          
+
           <button
-            type="button" onClick={submitForm}
+            type="button"
+            onClick={submitForm}
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Save Changes

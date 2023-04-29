@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { close, MTRIPI, menu, user } from "../assets";
 import { navLinks } from "../constants";
-import React, { useEffect } from "react";
-import AuthUser from "./auth/AuthUser";
+import AuthUser from "../auth/AuthUser";
+
 const Navbar = () => {
   const { token, logout } = AuthUser();
   const LogUser = () => {
@@ -16,9 +16,22 @@ const Navbar = () => {
 
   const [IconClicked, setIconClicked] = useState(false);
 
+  const userInfoRef = useRef(null);
+
   useEffect(() => {
     fetchUserDetail();
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
+
+  const handleClickOutside = (event) => {
+    if (userInfoRef.current && !userInfoRef.current.contains(event.target)) {
+      setIconClicked(false);
+    }
+  };
+
   const fetchUserDetail = () => {
     http.post("/me").then((res) => {
       setUserdetail(res.data);
@@ -37,27 +50,28 @@ const Navbar = () => {
           <div
             className="userInfo flex select-none cursor-pointer"
             onClick={handleUserActions}
+            ref={userInfoRef}
           >
             <img src={user} />
             <p className="text-white ml-2 font-bold text-xl">
-              {" "}
-              {userdetail.fName}
+              {userdetail.FName}
             </p>
-          </div>
-          <div
-            className={`userActions ${
-              IconClicked ? "block" : "hidden"
-            } absolute left-3/4 top-10 bg-emerald-600 p-4 rounded-xl z-10`}
-          >
-            <button className="primaryBtn Profile">
-              <Link to="/Profile">Profile</Link>
-            </button>
-            <button className="primaryBtn Profile">
-              <Link to="/Settings">Settings</Link>
-            </button>
-            <button className="secondaryBtn" onClick={LogUser}>
-              log out
-            </button>
+            <div
+              className={`userActions ${
+                IconClicked ? "scale-100" : "scale-0"
+              } absolute duration-200  bg-emerald-600 p-4 rounded-xl z-10`}
+              style={{ top: "100%", right: 0 }}
+            >
+              <button className="primaryBtn Profile">
+                <Link to="/Profile">Profile</Link>
+              </button>
+              <button className="primaryBtn Profile">
+                <Link to="/Settings">Settings</Link>
+              </button>
+              <button className="secondaryBtn" onClick={LogUser}>
+                log out
+              </button>
+            </div>
           </div>
         </>
       );
@@ -65,11 +79,12 @@ const Navbar = () => {
       return "";
     }
   }
+
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
+    <nav className="w-full relative flex py-6 justify-between items-center navbar">
       <Link to="/">
         <img src={MTRIPI} alt="mtripilogo" className="w-[124px] h-[32px]" />
       </Link>
@@ -82,21 +97,20 @@ const Navbar = () => {
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
-            <Link to={`/#${nav.id}`}>{nav.title}</Link>
-            {/* <a href={`#${nav.id}`}>{nav.title}</a> */}
+            <a href={`#${nav.id}`}>{nav.title}</a>
           </li>
         ))}
       </ul>
       {!userdetail && (
         <button className="text-white bg-emerald-600 p-3 xs:hidden lg:block ">
-          {" "}
-          <Link to="/login"> Get Started </Link>{" "}
+          <Link to="/login"> Get Started </Link>
         </button>
-      )}
-
+      )}{" "}
       {renderElement()}
-
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      <div
+        className="sm:hidden flex flex-1 justify-end items-center"
+        onClick={() => setIconClicked(false)} // hide userActions on click outside
+      >
         <img
           src={toggle ? close : menu}
           alt="menu"
@@ -116,7 +130,10 @@ const Navbar = () => {
                 className={`font-poppins font-medium cursor-pointer text-[16px] ${
                   active === nav.title ? "text-white" : "text-dimWhite"
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
-                onClick={() => setActive(nav.title)}
+                onClick={() => {
+                  setActive(nav.title);
+                  setToggle(false);
+                }}
               >
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
@@ -127,5 +144,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;
