@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Pic from "../../assets/authIllustrations/loginDude.png";
+import Pic from "../assets/authIllustrations/loginDude.png";
 import "./style.css";
 import { useState } from 'react';
 import AuthUser from './AuthUser'; 

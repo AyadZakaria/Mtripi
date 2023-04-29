@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { close, MTRIPI, menu, user } from "../assets";
 import { navLinks } from "../constants";
+import React, { useEffect } from "react";
 import AuthUser from "./auth/AuthUser";
-
 const Navbar = () => {
   const { token, logout } = AuthUser();
   const LogUser = () => {
@@ -54,24 +54,24 @@ const Navbar = () => {
           >
             <img src={user} />
             <p className="text-white ml-2 font-bold text-xl">
-              {/* {userdetail.name} */}
+              {" "}
+              {userdetail.name}
             </p>
-            <div
-              className={`userActions ${
-                IconClicked ? "scale-100" : "scale-0"
-              } absolute transition duration-300  bg-emerald-600  p-4 rounded-xl z-10`}
-              style={{ top: "90%", right: 0 }}
-            >
-              <button className="primaryBtn Profile">
-                <Link to="/Profile">Profile</Link>
-              </button>
-              <button className="primaryBtn Profile">
-                <Link to="/Settings">Settings</Link>
-              </button>
-              <button className="secondaryBtn" onClick={LogUser}>
-                log out
-              </button>
-            </div>
+          </div>
+          <div
+            className={`userActions ${
+              IconClicked ? "block" : "hidden"
+            } absolute left-3/4 top-10 bg-emerald-600 p-4 rounded-xl z-10`}
+          >
+            <button className="primaryBtn Profile">
+              <Link to="/Profile">Profile</Link>
+            </button>
+            <button className="primaryBtn Profile">
+              <Link to="/Settings">Settings</Link>
+            </button>
+            <button className="secondaryBtn" onClick={LogUser}>
+              log out
+            </button>
           </div>
         </>
       );
@@ -84,7 +84,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center relative navbar">
+    <nav className="w-full flex py-6 justify-between items-center navbar">
       <Link to="/">
         <img src={MTRIPI} alt="mtripilogo" className="w-[124px] h-[32px]" />
       </Link>
