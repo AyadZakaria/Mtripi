@@ -59,7 +59,7 @@ const Profile = () => {
   };
 
   return (
-    <div className={`${styles.containerHeight} bg-[#0F1014] h-[100%] p-3 `}>
+    <div className={`${styles.containerHeight} bg-[#0F1014] h-screen p-3 `}>
       <div className={`${styles.paddingX} ${styles.flexCenter} `}>
         <div className={`${styles.boxWidth}`}>
           <Navbar />

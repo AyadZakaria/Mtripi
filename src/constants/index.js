@@ -1,4 +1,19 @@
-import { facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox,people01, people02, people03,send, shield, star  } from "../assets";
+import {
+  facebook,
+  instagram,
+  linkedin,
+  twitter,
+  airbnb,
+  binance,
+  coinbase,
+  dropbox,
+  people01,
+  people02,
+  people03,
+  send,
+  shield,
+  star,
+} from "../assets";
 
 export const navLinks = [
   {
@@ -16,13 +31,12 @@ export const navLinks = [
   {
     id: "faq",
     title: "FAQ",
-  },{
+  },
+  {
     id: "reviews",
     title: "Reviews",
   },
 ];
-
-
 
 export const footerLinks = [
   {
@@ -120,14 +134,18 @@ export const clients = [
   },
   {
     id: "client-2",
-    logo: binance,
+    logo: dropbox,
   },
   {
     id: "client-3",
-    logo: coinbase,
+    logo: binance,
   },
   {
     id: "client-4",
+    logo: coinbase,
+  },
+  {
+    id: "client-5",
     logo: dropbox,
   },
 ];
@@ -135,24 +153,21 @@ export const clients = [
 export const feedback = [
   {
     id: "feedback-1",
-    content:
-      "a7ssan sit edima kay3tini gha las9 lafdk ",
+    content: "a7ssan sit edima kay3tini gha las9 lafdk ",
     name: "houssam ziyani ",
     title: "mousafir bilmajan",
     img: people01,
   },
   {
     id: "feedback-2",
-    content:
-      "a7ssan safariyat makayn gha staypa",
+    content: "a7ssan safariyat makayn gha staypa",
     name: "abdsadek  fa",
     title: "chiflor hh",
     img: people02,
   },
   {
     id: "feedback-3",
-    content:
-      "ichtarik ma3ana mardoda bi idn lah ",
+    content: "ichtarik ma3ana mardoda bi idn lah ",
     name: "rajawi 19949",
     title: "works at raja ca ",
     img: people03,

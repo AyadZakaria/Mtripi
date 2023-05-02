@@ -1,13 +1,8 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import { upload } from "../assets";
 import { useNavigate } from "react-router";
 import AuthUser from "../auth/AuthUser";
 import axios from "axios";
-
-
-
-
-
 
 const AddPost = () => {
   const { http, token, user } = AuthUser();
@@ -16,36 +11,40 @@ const AddPost = () => {
   const [description, setDescription] = useState("");
   const [budget, setBudget] = useState();
   const [startDate, setStartDate] = useState();
-  const [destination, setDestination ] = useState("");
-  const [image, setImage] = useState();
+  const [destination, setDestination] = useState("");
+  const [img, setImage] = useState();
+
+  const handleImgChange = (event) => {
+    const selectedFile = event.target.files[0];
+    setImage(selectedFile);
+  };
+
+  const handleRemoveImage = () => {
+    setImage(null);
+  };
+
   const [userid, setuserid] = useState(user.id);
-  
+
   const submitForm = () => {
     let formdata = new FormData();
     formdata.append("title", title);
     formdata.append("description", description);
     formdata.append("budget", budget);
-    formdata.append("image_path",image);
-    formdata.append("destination",destination);
-    formdata.append("start_date",startDate);
-    formdata.append("user_id",userid);
+    formdata.append("image_path", img);
+    formdata.append("destination", destination);
+    formdata.append("start_date", startDate);
+    formdata.append("user_id", userid);
     const config = {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    axios.post("http://localhost:8000/api/addpost", formdata, config);
+    console.log(userid);
+
+    // http.post('/addpost', { title:title, description: description, budget: budget , start_date:startDate , destination:destination, image_path:image}).then((res) => {
+    //      navigate('/profile')
+    //    });
   };
-  
-
-    axios.post(
-      'http://localhost:8000/api/addpost',formdata,config
-      );
-      console.log(userid)
-    
-    
-
-  // http.post('/addpost', { title:title, description: description, budget: budget , start_date:startDate , destination:destination, image_path:image}).then((res) => {
-  //      navigate('/profile')
-  //    });
- };
-
 
   return (
     <div className="text-dimWhite justify-around flex m-2 flex-col w-full h-1/2 items-center">
@@ -55,10 +54,7 @@ const AddPost = () => {
           Lorem ipsum is placeholder text.
         </p>
       </div>
-      <form 
-      className="flex justify-between items-center w-[90vh] m-1" 
-      >
-     
+      <form className="flex justify-between items-center w-[90vh] m-1">
         <div className="grid grid-cols-1 w-[40vh] space-y-2">
           <label className="text-sm font-bold text-gray-500 tracking-wide">
             Title
@@ -68,8 +64,8 @@ const AddPost = () => {
             type="text"
             name="title"
             placeholder="Merzouga..."
-            onChange={e => setTitle(e.target.value)}
-                  required
+            onChange={(e) => setTitle(e.target.value)}
+            required
           />
           <label className="text-sm font-bold text-gray-500 tracking-wide">
             Description
@@ -79,8 +75,8 @@ const AddPost = () => {
             type="text"
             name="description"
             placeholder="Merzouga..."
-            onChange={e => setDescription(e.target.value)}
-                  required
+            onChange={(e) => setDescription(e.target.value)}
+            required
           />
           <label className="text-sm font-bold text-gray-500 tracking-wide">
             Spent Budget
@@ -90,8 +86,8 @@ const AddPost = () => {
             type="number"
             name="budget"
             placeholder="Merzouga..."
-            onChange={e => setBudget(e.target.value)}
-                  required
+            onChange={(e) => setBudget(e.target.value)}
+            required
           />
           <label className="text-sm font-bold text-gray-500 tracking-wide">
             Trip Start Date
@@ -101,8 +97,8 @@ const AddPost = () => {
             type="date"
             name="start_date"
             placeholder="Merzouga..."
-            onChange={e => setStartDate(e.target.value)}
-                  required
+            onChange={(e) => setStartDate(e.target.value)}
+            required
           />
           <label className="text-sm font-bold text-gray-500 tracking-wide">
             destination
@@ -112,8 +108,8 @@ const AddPost = () => {
             type="text"
             name="destination"
             placeholder="Merzouga..."
-            onChange={e => setDestination(e.target.value)}
-                  required
+            onChange={(e) => setDestination(e.target.value)}
+            required
           />
         </div>
         <div className="w-[40vh] text-center ">
@@ -121,27 +117,49 @@ const AddPost = () => {
             Attach Picture
           </label>
           <div className="flex items-center justify-center w-full">
-            <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
+            <label
+              style={{
+                backgroundImage: `url(${upload})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
+                backgroundPosition: "center",
+              }}
+              className="flex flex-col rounded-xl border-2 w-full h-60 p-10 group text-center"
+            >
+              <h1 className="text-black text-2xl font-bold mt-12">
+                Click Here To{" "}
+                <span className="text-green-900 text-2xl font-semibold">
+                  Browse,
+                </span>{" "}
+                <br /> Into Your Computer
+              </h1>{" "}
               <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
                 <div className="flex flex-auto  mx-auto -mt-1">
-                  <img
-                    className="has-mask h-36 object-center"
-                    src={upload}
-                    alt="freepik image"
-                  />
-                  <input type="file" name="image_path" onChange={e => setImage(e.target.files[0])}
-                  required  className="text-black"/>
+                  <div className="relative">
+                    {img && (
+                      <div className="relative bac">
+                        <img
+                          src={URL.createObjectURL(img)}
+                          alt="file preview"
+                          className="w-100  object-cover rounded-md border border-gray-300 m-2"
+                        />
+                        <button
+                          className="absolute top-0 right-0 w-6 h-6 rounded-full bg-red-600 text-white flex justify-center items-center"
+                          onClick={handleRemoveImage}
+                        >
+                          X
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <p className="pointer-none text-gray-500 ">
-                  <span className="text-sm">Drag and drop</span>
-                  <br /> or{" "}
-                  <a href="" id="" className="text-blue-600 hover:underline">
-                    image
-                  </a>{" "}
-                  from your computer
-                </p>
               </div>
-              
+              <input
+                type="file"
+                className="hidden"
+                onChange={handleImgChange}
+              />
             </label>
           </div>
           <p className="text-sm text-gray-300">
