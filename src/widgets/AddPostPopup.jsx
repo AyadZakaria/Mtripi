@@ -127,13 +127,6 @@ const AddPost = () => {
               }}
               className="flex flex-col rounded-xl border-2 w-full h-60 p-10 group text-center"
             >
-              <h1 className="text-black text-2xl font-bold mt-12">
-                Click Here To{" "}
-                <span className="text-green-900 text-2xl font-semibold">
-                  Browse,
-                </span>{" "}
-                <br /> Into Your Computer
-              </h1>{" "}
               <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
                 <div className="flex flex-auto  mx-auto -mt-1">
                   <div className="relative">
