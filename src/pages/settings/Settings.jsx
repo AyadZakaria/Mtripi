@@ -1,22 +1,46 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
-import { useState, useEffect } from "react";
+import { useState, useEffect,  } from "react";
 import AuthUser from "../../auth/AuthUser";
 import { user as icon } from "../../assets";
+import { useNavigate } from "react-router-dom";
 // import Swal from "sweetalert2";
 import styles from "../../style";
 
 const Profile = () => {
+  const navigate = useNavigate();
   const { http, user } = AuthUser();
+  console.log(user);
   const [userdetail, setUserdetail] = useState();
-  const [fName, setFName] = useState(user.fName);
+  const [fName, setFName] = useState();
   const [id, setid] = useState(user.id);
-  const [lName, setLName] = useState(user.lName);
-  const [email, setEmail] = useState(user.email);
-  const [phone, setPhone] = useState(user.phone);
-  const [instagram, setInstagram] = useState(user.instagram);
-  const [password, setPassword] = useState(user.password);
-  const [description, setdescription] = useState(user.description);
+  const [lName, setLName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
+  const [instagram, setInstagram] = useState();
+  const [password, setPassword] = useState();
+  const [description, setdescription] = useState();
+
+
+  useEffect(() => {
+    fetchUserDetail();
+  }, []);
+
+  const fetchUserDetail = () => {
+    http.post("/me").then((res) => {
+      setid(res.data.id);
+      setFName(res.data.fName);
+      setLName(res.data.lName);
+      setEmail(res.data.email);
+      setPhone(res.data.phone);
+      setInstagram(res.data.instagram);
+      setPassword(res.data.password);
+      setdescription(res.data.description);
+    });
+  };
+
+
+
 
   const [dateTime, setDateTime] = useState(new Date());
   const options = {

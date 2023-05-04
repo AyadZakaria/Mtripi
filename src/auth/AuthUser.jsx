@@ -14,6 +14,7 @@ export default function AuthUser() {
   const getUser = () => {
     const userString = sessionStorage.getItem("user");
     const user_detail = JSON.parse(userString);
+    
     return user_detail;
   };
 

@@ -5,8 +5,26 @@ import UserInfo from "./UserInfo";
 import { mountains } from "../../assets";
 import Popupbtn from "./AddPostBtn";
 import "./style.css";
+import AuthUser from "../../auth/AuthUser";
+import { useNavigate } from "react-router-dom";
+
 
 const Profile = () => {
+  const navigate = useNavigate();
+  const { http } = AuthUser();
+  const [posts, setposts]= useState();
+  useEffect(() => {
+    fetchPostDetail();
+  }, []);
+
+  const fetchPostDetail = () => {
+    http.get("/Profile").then((res) => {
+      setposts(res);
+      
+      console.log(res.data)
+    });
+  };
+
   return (
     <>
       <div className="relative">

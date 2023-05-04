@@ -26,6 +26,7 @@ Route::post('login', [AuthController::class,'login']);
 Route::post('signup', [AuthController::class,'registre']);
 Route::put('user/{id}',[UserController::class,'update'] );
 Route::post('addpost',[PostController::class,'store'] );
+Route::get('Profile',[PostController::class,'show'] );
 
 
 Route::group(['middleware'=>'api'],function(){
