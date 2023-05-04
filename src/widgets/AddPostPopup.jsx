@@ -77,18 +77,18 @@ const AddPost = () => {
             className="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 text-black"
             type="text"
             name="description"
-            placeholder="Merzouga..."
+            placeholder="it Was a realy Nice trip..."
             onChange={(e) => setDescription(e.target.value)}
             required
           />
           <label className="text-sm font-bold text-gray-500 tracking-wide">
-            Spent Budget
+            Spent Budget ($)
           </label>
           <input
             className="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 text-black"
             type="number"
             name="budget"
-            placeholder="Merzouga..."
+            placeholder="10.99 $"
             onChange={(e) => setBudget(e.target.value)}
             required
           />

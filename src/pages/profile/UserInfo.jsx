@@ -49,8 +49,10 @@ const UserInfo = () => {
 
           <p className="flex items-center">
             <MdCardMembership className="Element-icon" />
-            Since : {" "}
-            <span> {userMembership.toLocaleDateString("en-US", options)}</span>
+            <span>
+              {" "}
+              Since : {userMembership.toLocaleDateString("en-US", options)}
+            </span>
           </p>
         </div>
       </div>

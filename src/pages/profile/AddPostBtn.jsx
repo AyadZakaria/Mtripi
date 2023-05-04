@@ -48,7 +48,7 @@ const Popupbtn = () => {
         </div>
       ) : (
         <button
-          className="bg-gradient-text bg-gradient-to-r from-green-400 to-transparent hover:bg-green-200 text-sm text-white font-medium py-1 px-2 rounded"
+          className=" bg-green-400  hover:bg-green-600 text-sm text-white font-medium py-1 px-2 rounded"
           onClick={handlePopupClick}
         >
           Add Post

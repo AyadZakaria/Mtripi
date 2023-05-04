@@ -18,6 +18,10 @@ const Navbar = () => {
 
   useEffect(() => {
     fetchUserDetail();
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const fetchUserDetail = () => {
@@ -30,13 +34,6 @@ const Navbar = () => {
   const [IconClicked, setIconClicked] = useState(false);
 
   const userInfoRef = useRef(null);
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   const handleClickOutside = (event) => {
     if (userInfoRef.current && !userInfoRef.current.contains(event.target)) {
@@ -89,7 +86,11 @@ const Navbar = () => {
         </>
       );
     } else {
-      return "";
+      return (
+        <button className="text-white bg-emerald-600 p-3 rounded-3xl xs:hidden lg:block ">
+          <Link to="/login"> Get Started </Link>
+        </button>
+      );
     }
   }
 
@@ -115,7 +116,7 @@ const Navbar = () => {
         ))}
       </ul>
       {!user && (
-        <button className="text-white bg-emerald-600 p-3 xs:hidden lg:block ">
+        <button className="text-white rounded-2xl bg-emerald-600 p-3 xs:hidden lg:block ">
           <Link to="/login"> Get Started </Link>
         </button>
       )}{" "}
