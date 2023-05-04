@@ -5,9 +5,10 @@ import { navLinks } from "../constants";
 import AuthUser from "../auth/AuthUser";
 
 const Navbar = () => {
-  const { token, user, logout } = AuthUser();
-  const [userFirstName, setUserFirstName] = useState(user.fName);
-  const [userLastName, setUserLastName] = useState(user.lName);
+  const { token, user, http, setUser, logout } = AuthUser();
+  const [userdetail, setUserdetaild] = useState("");
+  const [userFirstName, setUserFirstName] = useState("");
+  const [userLastName, setUserLastName] = useState("");
 
   const LogUser = () => {
     if (token != undefined) {
@@ -15,6 +16,17 @@ const Navbar = () => {
     }
   };
 
+  useEffect(() => {
+    fetchUserDetail();
+  }, []);
+
+  const fetchUserDetail = () => {
+    http.post("/me").then((res) => {
+      setUserdetaild(res.data);
+      setUserFirstName(res.data.fName);
+      setUserLastName(res.data.lName);
+    });
+  };
   const [IconClicked, setIconClicked] = useState(false);
 
   const userInfoRef = useRef(null);
@@ -37,7 +49,7 @@ const Navbar = () => {
   };
 
   function renderElement() {
-    if (user) {
+    if (userdetail) {
       return (
         <>
           {" "}

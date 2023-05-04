@@ -18,7 +18,6 @@ const Profile = () => {
   const [password, setPassword] = useState(user.password);
   const [description, setdescription] = useState(user.description);
 
- 
   const [dateTime, setDateTime] = useState(new Date());
   const options = {
     weekday: "long",
