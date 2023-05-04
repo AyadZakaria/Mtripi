@@ -86,11 +86,7 @@ const Navbar = () => {
         </>
       );
     } else {
-      return (
-        <button className="text-white bg-emerald-600 p-3 rounded-3xl xs:hidden lg:block ">
-          <Link to="/login"> Get Started </Link>
-        </button>
-      );
+      return (' ')
     }
   }
 
@@ -116,7 +112,7 @@ const Navbar = () => {
         ))}
       </ul>
       {!user && (
-        <button className="text-white rounded-2xl bg-emerald-600 p-3 xs:hidden lg:block ">
+        <button className="text-white rounded-3xl bg-emerald-600 p-3 xs:hidden lg:block ">
           <Link to="/login"> Get Started </Link>
         </button>
       )}{" "}

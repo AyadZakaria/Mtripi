@@ -10,6 +10,7 @@
   left: 5%;
   background-color: black;
 }
+
 .userdetails img {
   width: 6em;
   margin: 0 auto;
@@ -73,8 +74,12 @@
   position: absolute;
   left: 30%;
   padding-bottom: 5em;
+  box-sizing: border-box;
+  max-height: 100%;
+  max-width: 100%;
 }
 .post {
+  
   border: none;
   border-radius: 1.6em;
   margin-top: 2em;

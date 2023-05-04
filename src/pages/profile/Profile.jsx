@@ -10,7 +10,7 @@ import PostsContainer from "./PostsContainer";
 
 const Profile = () => {
   return (
-    <>
+    <div className=" bg-[#0F1014] max-h-fit">
       <div className="relative bg-[#0F1014]">
         <div
           style={{
@@ -40,7 +40,7 @@ const Profile = () => {
           <PostsContainer />
         </div>
       </div>
-    </>
+      </div>
   );
 };
 
