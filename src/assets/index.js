@@ -25,6 +25,7 @@ import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
 import upload from './upload.jpg'
+import mountains from './mountains.jpg'
 
 export {
   airbnb,
@@ -54,4 +55,5 @@ export {
   shield,
   star,
   upload,
+  mountains,
 };

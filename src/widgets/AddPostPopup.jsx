@@ -40,6 +40,9 @@ const AddPost = () => {
 
     axios.post("http://localhost:8000/api/addpost", formdata, config);
     console.log(userid);
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 1000);
 
     // http.post('/addpost', { title:title, description: description, budget: budget , start_date:startDate , destination:destination, image_path:image}).then((res) => {
     //      navigate('/profile')

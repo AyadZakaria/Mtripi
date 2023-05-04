@@ -1,0 +1,64 @@
+.userdetails {
+  width: 20%;
+  padding: 2em;
+  border: 0.5px solid transparent;
+  border-radius: 2em;
+  height: max-content;
+  position: absolute;
+  top: 23%;
+  left: 5%;
+  background-color: black;
+}
+.userdetails img {
+  width: 6em;
+  margin: 0 auto;
+}
+.userdetails .info {
+  box-sizing: border-box;
+  max-height: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+}
+.userdetails .info p {
+  font-size: large;
+  margin: 0.3em 0;
+  padding: 0.1em 0;
+}
+.userdetails .info p span {
+  margin-left: 0.5em;
+}
+.userdetails .info h1 {
+  font-size: xx-large;
+}
+.userdetails .info .username {
+  font-size: medium;
+  margin-top: -0.45em;
+  color: rgb(114, 114, 121);
+  margin-bottom: 1.2em;
+}
+.userdetails .info .Element-icon {
+  margin-right: 0.5em;
+  color: rgb(146, 227, 169);
+  font-size: larger;
+}
+
+.subnav {
+  background-color: black;
+  display: flex;
+  justify-content: end;
+  color: aliceblue;
+}
+.subnav ul {
+  display: flex;
+  padding: 0.6em;
+  padding-right: 2em;
+  width: 72%;
+  justify-content: space-between;
+  align-items: center;
+}
+.subnav ul li span {
+  font-size: large;
+  font-weight: 500;
+}

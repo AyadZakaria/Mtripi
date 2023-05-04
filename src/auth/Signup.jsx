@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import AuthUser from "./AuthUser";
 import Pic2 from "../assets/authIllustrations/signupLady.png";
 import axios from "axios";
+import { Navbar } from "../components";
 
 
 const Signup = () => {
@@ -27,6 +28,9 @@ const Signup = () => {
 
   return (
     <>
+      <div className=" w-[100%] px-20 h-fit bg-gradient-to-r from-green-300 to-transparent fixed z-10">
+        <Navbar />
+      </div>
       <section className="main-signup-section">
         <div className="left">
           <img src={Pic2} alt="" />
