@@ -1,4 +1,4 @@
-import { service, teem, expert, detail, consulting } from "../../assets";
+import { service, teem } from "../../assets";
 import "./about.css";
 
 const About = () => (
@@ -46,15 +46,15 @@ const About = () => (
       </div>
       <div className="why-body">
         <div className="cart">
-          <img src={expert} alt="icon" />
+          <img src={service} alt="icon" />
           <h3>Expertise</h3>
           <p>
             We have extensive experience in choosing best places in morocco for
             individuals all across the world.
           </p>
         </div>
-        <div className="cart">
-          <img src={detail} alt="icon" />
+        <div className="cart ">
+          <img src={service} alt="icon" />
           <h3>Attention to Detail</h3>
           <p>
             We have extensive experience in choosing best places in morocco for
@@ -62,7 +62,7 @@ const About = () => (
           </p>
         </div>
         <div className="cart">
-          <img src={consulting} alt="icon" />
+          <img src={service} alt="icon" />
           <h3>Communication</h3>
           <p>
             We have extensive experience in choosing best places in morocco for

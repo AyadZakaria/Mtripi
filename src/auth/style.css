@@ -29,7 +29,7 @@ p {
   padding: .7em;
   margin: 1em 0;
   color: #fff;
-  background:  radial-gradient(circle at 10% 20%, rgba(87, 108, 117, 0.438) 0%, rgba(37, 50, 55, 0.459) 100.2%);;
+  background:  radial-gradient(circle at 10% 20%, rgba(87, 108, 117, 0.438) 0%, rgba(37, 50, 55, 0.459) 0%);;
   border-radius: 0.5em;
   outline: none;
 }
@@ -106,7 +106,7 @@ p {
   padding: .7em;
   margin: 1em 0;
   color: #fff;
-  background:  radial-gradient(circle at 10% 20%, rgba(87, 108, 117, 0.438) 0%, rgba(37, 50, 55, 0.459) 100.2%);;
+  background:  radial-gradient(circle at 10% 20%, rgba(87, 108, 117, 0.438) 0%, rgba(37, 50, 55, 0.459) 0%);
   border-radius: 0.5em;
   outline: none;
 }
