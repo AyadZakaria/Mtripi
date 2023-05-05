@@ -23,8 +23,8 @@
   margin: 1em 0 0 0;
 }
 
-body{
-  background-color: #0F1014;
+body {
+  background-color: #0f1014;
 }
 .primaryBtn {
   width: 100%;
@@ -47,6 +47,19 @@ body{
   color: var(--primary-color);
   font-weight: 650;
   font-size: large;
+}
+.secondaryBtn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-color: transparent;
+  text-shadow: 1px 1px 4px #7574748f;
+  transition: 0.5s;
+}
+.primaryBtn:hover {
+  background-color: var(--secondary-color);
+  border-color: transparent;
+  color: var(--primary-color);
+  transition: 0.5s;
 }
 * {
   scroll-behavior: smooth;

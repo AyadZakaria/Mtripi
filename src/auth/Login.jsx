@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import { useState } from "react";
 import AuthUser from "./AuthUser";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { Navbar } from "../components";
 
 const Login = () => {
@@ -17,9 +18,12 @@ const Login = () => {
 
   return (
     <>
-      {/* <div className=" w-[100%] px-20 h-fit bg-gradient-to-r from-green-300 to-transparent fixed z-10">
-        <Navbar />
-      </div> */}
+      <div className=" absolute font-bold text-lg cursor-pointer flex items-center left-6 top-8 justify-around w-[7%] text-dimWhite ">
+        <Link to="/">
+          <BsFillArrowLeftCircleFill />
+        </Link>{" "}
+        <Link to="/">Go Back</Link>
+      </div>
       <section className="main-login-section text-dimWhite">
         {/* left */}
         <div className="left">
@@ -75,9 +79,7 @@ const Login = () => {
 
         {/* left part endes here */}
 
-        <div className="right">
-          
-        </div>
+        <div className="right"></div>
       </section>
     </>
   );
