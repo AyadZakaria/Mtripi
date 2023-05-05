@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Pic from "../assets/authIllustrations/loginDude.png";
 import "./style.css";
 import { useState } from "react";
 import AuthUser from "./AuthUser";
@@ -18,10 +17,10 @@ const Login = () => {
 
   return (
     <>
-      <div className=" w-[100%] px-20 h-fit bg-gradient-to-r from-green-300 to-transparent fixed z-10">
+      {/* <div className=" w-[100%] px-20 h-fit bg-gradient-to-r from-green-300 to-transparent fixed z-10">
         <Navbar />
-      </div>
-      <section className="main-login-section">
+      </div> */}
+      <section className="main-login-section text-dimWhite">
         {/* left */}
         <div className="left">
           <h2 className="welcomeHeading">Welcome Back !</h2>
@@ -77,7 +76,7 @@ const Login = () => {
         {/* left part endes here */}
 
         <div className="right">
-          <img src={Pic} alt="Login Icon" />
+          
         </div>
       </section>
     </>

@@ -7,14 +7,14 @@ p {
 /* Log in page style starts here*/
 .main-login-section {
   width: 100%;
-  display: flex;
+  display: grid;
   height: 100vh;
-  justify-content: space-around;
+  grid-template-columns: 50% 50%;
   align-items: center;
 }
 /* left part */
 .main-login-section .left {
-  width: 30%;
+  margin: 0 5em 0 5em ;
 }
 /* form styling */
 .main-login-section .left form {
@@ -25,9 +25,11 @@ p {
 }
 /* styling the inputs */
 .main-login-section .left form input {
-  border: 0.02em solid #555;
-  padding: 0.5em;
+  border: 0.02em solid transparent;
+  padding: .7em;
   margin: 1em 0;
+  color: #fff;
+  background:  radial-gradient(circle at 10% 20%, rgba(87, 108, 117, 0.438) 0%, rgba(37, 50, 55, 0.459) 100.2%);;
   border-radius: 0.5em;
   outline: none;
 }
@@ -49,15 +51,21 @@ p {
 
 /* right part img styling */
 .main-login-section .right {
-  width: 38%;
+  background-image: url('../assets/loginPic.jpg');
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 6em 0 0 0em;
 }
 /* don't have an account text */
-.main-login-section .left .dontHaveAcc {
+.dontHaveAcc {
   opacity: 0.8;
   font-weight: 500;
 }
 /* the sign up link */
-.main-login-section .left .dontHaveAcc span {
+.dontHaveAcc span {
   color: var(--primary-color);
   margin-left: 10px;
 }
@@ -66,28 +74,39 @@ p {
 /* Sign up page style starts here  */
 .main-signup-section {
   width: 100%;
-  display: flex;
+  display: grid;
   height: 100vh;
-  justify-content: space-around;
+  grid-template-columns: 40% 60%;
   align-items: center;
 }
 .main-signup-section .left {
-  width: 40%;
+  background-image: url('../assets/signupPic.jpg');
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0 6em 0em 0;
 }
+
 .main-signup-section .right {
-  width: 30%;
+  margin: 0 5em 0 5em ;
+
 }
 /* form styling */
 .main-signup-section .right form {
   margin: 2em 0;
+  width: 90%;
   display: flex;
   flex-direction: column;
 }
 /* styling the inputs */
 .main-signup-section .right form input {
-  border: 0.02em solid #555;
-  padding: 0.5em;
+  border: 0.02em solid transparent;
+  padding: .7em;
   margin: 1em 0;
+  color: #fff;
+  background:  radial-gradient(circle at 10% 20%, rgba(87, 108, 117, 0.438) 0%, rgba(37, 50, 55, 0.459) 100.2%);;
   border-radius: 0.5em;
   outline: none;
 }

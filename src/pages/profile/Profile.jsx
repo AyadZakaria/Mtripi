@@ -35,12 +35,12 @@ const Profile = () => {
             </li>
           </ul>
         </div>
-        <div className="bg-[#0F1014] p-3 h-screen">
+        <div className="bg-[#0F1014] p-3 h-[100vh]">
           <UserInfo />
           <PostsContainer />
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 
