@@ -86,7 +86,11 @@ const Navbar = () => {
         </>
       );
     } else {
-      return (' ')
+      return (
+        <button className="text-white rounded-3xl bg-emerald-600 p-3 xs:hidden lg:block ">
+          <Link to="/login"> Get Started </Link>
+        </button>
+      )
     }
   }
 
@@ -111,11 +115,6 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      {!user && (
-        <button className="text-white rounded-3xl bg-emerald-600 p-3 xs:hidden lg:block ">
-          <Link to="/login"> Get Started </Link>
-        </button>
-      )}{" "}
       {renderElement()}
       <div
         className="sm:hidden flex flex-1 justify-end items-center"
