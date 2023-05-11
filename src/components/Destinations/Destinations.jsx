@@ -14,7 +14,7 @@ const Destinations = () => (
         </span>
       </h1>
       <div>
-        <Link className="primaryBtn" to="/Posts">
+        <Link className="primaryBtn" to="/posts">
           All Destinations
         </Link>
       </div>
