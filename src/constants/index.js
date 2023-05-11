@@ -13,6 +13,11 @@ import {
   send,
   shield,
   star,
+  AlHoceima,
+  Taghazout,
+  Atlass,
+  Atlass2,
+  Bouanane,
 } from "../assets";
 
 export const navLinks = [
@@ -207,15 +212,17 @@ export const HomeDestinations = [
     budget: "100 $",
     start_date: "2022-04-23",
     destination: "Marakech",
+    img: Atlass,
   },
   {
     id: 2,
-    title: "El Houceima Beaches",
+    title: "Al Hoceima Beaches",
     description:
       "We had a great expirience, hiking in ATLAS Mountains Morocco with a group of good people was the best thing ever, thank you guys for the Suggesten.",
     budget: "82 $",
     start_date: "2020-12-03",
     destination: "El Houceima",
+    img: AlHoceima,
   },
   {
     id: 3,
@@ -225,23 +232,26 @@ export const HomeDestinations = [
     budget: "219 $",
     start_date: "2023-01-11",
     destination: "Agadir Taghazout",
+    img: Taghazout,
   },
   {
     id: 4,
-    title: "Beautiful Mountains Trip",
+    title: "Mountains Trip",
     description:
       "We had a great expirience, hiking in ATLAS Mountains Morocco with a group of good people was the best thing ever, thank you guys for the Suggesten.",
     budget: "500 $",
     start_date: "2022-04-23",
-    destination: "Marakech",
+    destination: "Atlass Mountains",
+    img: Atlass2,
   },
   {
     id: 5,
-    title: "Beautiful Mountains Trip",
+    title: "A Walk Up Bouanane",
     description:
-      "We had a great expirience, hiking in ATLAS Mountains Morocco with a group of good people was the best thing ever, thank you guys for the Suggesten.",
-    budget: "1222 $",
-    start_date: "2022-04-23",
-    destination: "Marakech",
+      "The city of Tetouan has a great location, it is surrounded by mountains and gigantic hills to the north and the south. One cannot visit the city of Tétouan without taking a detour up to Ain Bouanane.",
+    budget: "1022 $",
+    start_date: "2002-04-23",
+    destination: "Tetouan",
+    img: Bouanane,
   },
 ];

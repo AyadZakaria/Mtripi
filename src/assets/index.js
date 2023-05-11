@@ -13,9 +13,7 @@ import twitter from "./twitter.svg";
 import banner from "./banner.jpg";
 import teem from "./teem.jpg";
 import expert from "./icons/leader.png";
-import detail from "./icons/detail.png";
 import service from "./icons/service.png";
-import consulting from "./icons/consulting.png";
 import user from "./authIllustrations/user.png";
 import quotes from "./quotes.svg";
 import people01 from "./people01.png";
@@ -24,10 +22,15 @@ import people03 from "./people03.png";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
-import upload from './upload.jpg';
-import mountains from './mountains.jpg';
-import signupPic from './signupPic.jpg';
-import loginPic from './loginPic.jpg';
+import upload from "./upload.jpg";
+import mountains from "./mountains.jpg";
+import signupPic from "./signupPic.jpg";
+import loginPic from "./loginPic.jpg";
+import AlHoceima from "./HomeDestinations/AlHoceima.jpg";
+import Atlass from "./HomeDestinations/Atlass.jpg";
+import Atlass2 from "./HomeDestinations/AtlassTwo.jpeg";
+import Taghazout from "./HomeDestinations/Taghazout.jpg";
+import Bouanane from "./HomeDestinations/Bouanane.jpg";
 
 export {
   airbnb,
@@ -45,9 +48,7 @@ export {
   banner,
   teem,
   expert,
-  detail,
   service,
-  consulting,
   user,
   quotes,
   people01,
@@ -60,4 +61,9 @@ export {
   mountains,
   signupPic,
   loginPic,
+  Atlass,
+  Atlass2,
+  Bouanane,
+  Taghazout,
+  AlHoceima,
 };
