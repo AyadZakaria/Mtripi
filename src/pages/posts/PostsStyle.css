@@ -1,0 +1,87 @@
+.Posts_main {
+  display: grid;
+  width: 90%;
+  grid-template-columns: 33% 33% 33%;
+  margin: auto;
+  gap: 1em;
+  padding: 1em;
+  color: #fff;
+}
+
+.Posts_main .card {
+  border-radius: 1em;
+  position: relative;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(87, 108, 117, 0.438) 0%,
+    rgba(37, 50, 55, 0.459) 0%
+  );
+  margin: 1em ;
+  height: 38vh;
+  overflow: hidden;
+}
+.Posts_main .card .Card_header {
+  display: flex;
+  margin: 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+.Posts_main .card .Card_header .location {
+  border: 0.05em solid var(--primary-color);
+  border-radius: .7em;
+  padding: 0.5em;
+}
+.Posts_main .card .Card_header .love{
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  align-items: center;
+}
+.Posts_main .card .Card_header .love h2{
+  font-size: medium;
+  text-transform: capitalize;
+}
+.Posts_main .card .Card_header .love img{
+  width: 1em;
+}
+
+.Posts_main .card .Card_header .location h2 {
+  display: flex;
+  align-items: center;
+}
+.Posts_main .card .Card_header .location h2 span {
+  margin-right: 0.5em;
+}
+.Posts_main .card .infos {
+  padding: 0 1em;
+}
+.Posts_main .card .postImage {
+  border-radius: 1em 1em 0 0;
+  width: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.Posts_main .card .infos h1 {
+  font-size: x-large;
+  padding: 0.2em 0;
+}
+
+.Posts_main .card .infos p {
+  font-size: small;
+  padding: 0 0 1.2em 0;
+}
+
+.Posts_main .Last_card {
+  margin: auto;
+  text-align: center;
+}
+
+.Posts_main .Last_card .content h1 {
+  font-size: xx-large;
+  padding: 1em 0;
+}
+
+.Posts_main .card .postImage:hover {
+  top: 30%;
+}
