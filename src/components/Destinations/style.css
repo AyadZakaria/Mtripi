@@ -1,0 +1,38 @@
+.mainDesContainer {
+  height: 100vh;
+}
+
+.mainDesContainer .header {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mainDesContainer .header h1 {
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.mainDesContainer .header h1 span {
+  margin-left: 0.5em;
+  color: var(--primary-color);
+}
+
+/* main destinations card */
+
+.mainDesContainer .main {
+  display: grid;
+  grid-template-columns: 28% 28% 28%;
+  color: #fff;
+}
+
+.mainDesContainer .main .card {
+  border-radius: 1em;
+  background-color: var(--primary-color);
+  padding: 2em;
+  margin: 2em;
+}

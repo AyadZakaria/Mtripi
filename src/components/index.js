@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import About from "./About/About";
-import Destinations from "./Destinations";
+import Destinations from "./Destinations/Destinations";
 import Footer from "./Footer";
 import Faq from "./Faq";
 import Hero from "./Hero";

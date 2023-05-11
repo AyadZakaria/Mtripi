@@ -59,6 +59,7 @@
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  padding: 1em 0 1em 0;
   width: 45%;
   text-align: center;
 }
@@ -86,8 +87,11 @@
   margin: 1.5em auto;
   position: relative;
   cursor: pointer;
-  background:  radial-gradient(circle at 10% 20%, rgba(87, 108, 117, 0.438) 0%, rgba(37, 50, 55, 0.459) 0%);;
-
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(87, 108, 117, 0.438) 0%,
+    rgba(37, 50, 55, 0.459) 0%
+  );
 }
 .why-us .why-body .cart:hover {
   transform: scale(1.1);

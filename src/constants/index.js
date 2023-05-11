@@ -160,9 +160,9 @@ export const feedback = [
   },
   {
     id: "feedback-2",
-    content: "a7ssan safariyat makayn gha staypa",
-    name: "abdsadek  fa",
-    title: "chiflor hh",
+    content: "safariya gamda fachkh wallahi, A7ssan Nass wi nabi",
+    name: "Ahmed Mohssine",
+    title: "Love Mo Sallah",
     img: people02,
   },
   {
@@ -195,5 +195,53 @@ export const features = [
     title: "quest 3",
     content:
       "A balance transfer credit card can save you a lot of money in interest charges.",
+  },
+];
+
+export const HomeDestinations = [
+  {
+    id: 1,
+    title: "Beautiful Mountains Trip",
+    description:
+      "We had a great expirience, hiking in ATLAS Mountains Morocco with a group of good people was the best thing ever, thank you guys for the Suggesten.",
+    budget: "100 $",
+    start_date: "2022-04-23",
+    destination: "Marakech",
+  },
+  {
+    id: 2,
+    title: "El Houceima Beaches",
+    description:
+      "We had a great expirience, hiking in ATLAS Mountains Morocco with a group of good people was the best thing ever, thank you guys for the Suggesten.",
+    budget: "82 $",
+    start_date: "2020-12-03",
+    destination: "El Houceima",
+  },
+  {
+    id: 3,
+    title: "Greate Waves of Taghazout",
+    description:
+      "We had a great expirience, hiking in ATLAS Mountains Morocco with a group of good people was the best thing ever, thank you guys for the Suggesten.",
+    budget: "219 $",
+    start_date: "2023-01-11",
+    destination: "Agadir Taghazout",
+  },
+  {
+    id: 4,
+    title: "Beautiful Mountains Trip",
+    description:
+      "We had a great expirience, hiking in ATLAS Mountains Morocco with a group of good people was the best thing ever, thank you guys for the Suggesten.",
+    budget: "500 $",
+    start_date: "2022-04-23",
+    destination: "Marakech",
+  },
+  {
+    id: 5,
+    title: "Beautiful Mountains Trip",
+    description:
+      "We had a great expirience, hiking in ATLAS Mountains Morocco with a group of good people was the best thing ever, thank you guys for the Suggesten.",
+    budget: "1222 $",
+    start_date: "2022-04-23",
+    destination: "Marakech",
   },
 ];
