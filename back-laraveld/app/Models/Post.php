@@ -11,7 +11,7 @@ class Post extends Model
     
     protected $guarded = []; 
     use HasFactory;
-    public function user(): BelongsTo
+    public function users(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
