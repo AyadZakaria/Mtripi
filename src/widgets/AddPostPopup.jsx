@@ -120,16 +120,11 @@ const AddPost = () => {
             Attach Picture
           </label>
           <div className="flex items-center justify-center w-full">
-            <label
-              style={{
-                backgroundImage: `url(${upload})`,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundAttachment: "fixed",
-                backgroundPosition: "center",
-              }}
-              className="flex flex-col rounded-xl border-2 w-full h-60 p-10 group text-center"
-            >
+            <label className="flex flex-col rounded-xl border-2 w-full h-60 p-10 group text-center">
+              <h1 className="text-green-500 w-[30%] top-2/4 absolute">
+                Click <span className="text-blue-500 underline">Here</span> To
+                Browse a Picture from Your Computer
+              </h1>
               <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
                 <div className="flex flex-auto  mx-auto -mt-1">
                   <div className="relative">
@@ -138,7 +133,7 @@ const AddPost = () => {
                         <img
                           src={URL.createObjectURL(img)}
                           alt="file preview"
-                          className="w-100  object-cover rounded-md border border-gray-300 m-2"
+                          className="w-[100%]  object-cover rounded-md border border-gray-300 m-2"
                         />
                         <button
                           className="absolute top-0 right-0 w-6 h-6 rounded-full bg-red-600 text-white flex justify-center items-center"

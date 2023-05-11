@@ -16,16 +16,12 @@ const About = () => (
         <img src={teem} alt="About" />
         <div className="about-desc ">
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum quis
-            enim saepe adipisci suscipit eveniet reprehenderit animi officia
-            consectetur omnis, quo ad assumenda hic iure. Aut vero enim cum
-            ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Quasi nisi iste perspiciatis! Dignissimos praesentium voluptatum
-            fuga similique maiores molestiae? Dolorum labore sequi voluptatum
-            magnam doloribus incidunt laudantium tenetur fugit quas dolorem,
-            reiciendis eaque eligendi vitae at, deleniti omnis voluptatibus
-            voluptates suscipit eveniet maxime? Vero commodi illo, pariatur
-            nobis minima debitis.
+            Welcome to M'TRIPI, the ultimate platform for hiking enthusiasts
+            looking to explore the best destinations in Morocco. We provide a
+            space for users to share personal experiences and recommendations,
+            including transportation, budgets, and other details that can make a
+            hiking trip more enjoyable. Join our community and discover the most
+            scenic trails and hidden treasures of this beautiful country.
           </p>
           <button className="about-desc-button secondaryBtn">
             {" "}
