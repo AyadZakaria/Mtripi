@@ -95,4 +95,5 @@
 
 .mainDesContainer .main .card img:hover {
   top: 20%;
+  transition-delay: 5s;
 }
