@@ -73,7 +73,7 @@ const AddPost = () => {
           <label className="text-sm font-bold text-gray-500 tracking-wide">
             Description
           </label>
-          <input
+          <textarea
             className="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 text-black"
             type="text"
             name="description"

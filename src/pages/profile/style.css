@@ -79,7 +79,6 @@
   max-width: 100%;
 }
 .post {
-  
   border: none;
   border-radius: 1.6em;
   margin-top: 2em;
@@ -100,15 +99,14 @@
   justify-content: space-around;
 }
 .post .childOne h2 {
-  font-size: x-large;
+  font-size: large;
 }
 
 .post .childTwo {
   margin-left: 3em;
   width: 100%;
-  height: fit-content;
   padding-left: 1em;
-  padding-right: 1em;
+  padding-right: 10em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -118,7 +116,19 @@
   margin-bottom: 2px;
 }
 
-.post .childTwo .link {
-  font-size: small;
-  text-align: end;
+/* Options btns */
+
+.StandardBtn{
+  background: var(--primary-color);
+  margin: .2em;
+  padding: .4em;
+  border-radius: .5em;
+  border: .2px solid var(--primary-color);
+  font-weight: 500;
+  transition: .5s;
+}
+
+.StandardBtn:hover{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }

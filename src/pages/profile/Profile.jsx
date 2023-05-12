@@ -3,7 +3,7 @@ import styles from "../../style";
 import { Navbar } from "../../components";
 import UserInfo from "./UserInfo";
 import { mountains } from "../../assets";
-import Popupbtn from "./AddPostBtn";
+import Popupbtn from "../../widgets/AddPostBtn";
 import "./style.css";
 
 import PostsContainer from "./PostsContainer";
@@ -31,7 +31,7 @@ const Profile = () => {
               <span className="text-green-300 underline">Posts</span>{" "}
             </li>
             <li>
-              <Popupbtn />
+              <Popupbtn label="Add Post" />
             </li>
           </ul>
         </div>
