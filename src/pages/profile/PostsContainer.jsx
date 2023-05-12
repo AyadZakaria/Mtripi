@@ -3,18 +3,30 @@ import AuthUser from "../../auth/AuthUser";
 import { MdLocationOn } from "react-icons/md";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdDateRange } from "react-icons/md";
 import { Triangle } from "react-loader-spinner";
 
+
 const PostsContainer = () => {
   const { http } = AuthUser();
+  const navigate = useNavigate();
   const [posts, setposts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  
   let postsReverse = [...posts].reverse();
   useEffect(() => {
     fetchPostDetail();
+    
   }, []);
+
+  const deletepost = (iduser) => {
+    http.delete(`/destroypost/${iduser}`).then((res) => {
+      console.log(res);
+      navigate('/profile')
+    });
+       
+  };
 
   const fetchPostDetail = () => {
     http.get("/Profile").then((res) => {
@@ -42,13 +54,16 @@ const PostsContainer = () => {
       return <p>You Have no posts Yet..</p>;
     }
   };
+  
   return (
     <section className="postsContainer  text-dimWhite">
       {posts.length > 0
         ? postsReverse.map((elem, index) => {
             let title = elem.title;
+            let iduser = elem.id;
             return (
               <div key={index} className="post shadow-2xl">
+                
                 <div className="childOne">
                   <img
                     className="w-[35vh] rounded-lg"
@@ -74,6 +89,16 @@ const PostsContainer = () => {
                   <p className="link text-green-300 underline">
                     <Link to={`/post/${elem.user_id}/${elem.id}`}>
                       See More
+                    </Link>
+                  </p>
+                  
+                    <button onClick={()=>deletepost(iduser)}>
+                      Delete post 
+                    </button>
+                  
+                  <p className="link text-green-300 underline">
+                    <Link to={`/post/${elem.user_id}/${elem.id}`}>
+                      Edit post
                     </Link>
                   </p>
                 </div>

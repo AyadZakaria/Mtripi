@@ -27,7 +27,9 @@ Route::post('signup', [AuthController::class,'registre']);
 Route::put('user/{id}',[UserController::class,'update'] );
 Route::post('addpost',[PostController::class,'store'] );
 Route::get('Profile',[PostController::class,'show'] );
+Route::get('profile/{id}',[PostController::class,'showprofile'] );
 Route::get('posts',[PostController::class,'index'] );
+Route::delete('destroypost/{id}',[PostController::class,'destroyPost'] );
 
 
 Route::group(['middleware'=>'api'],function(){

@@ -66,7 +66,7 @@ const PostsPage = () => {
                       </h2>
                     </div>
                     <div className="love">
-                      <h2>{elem.user.fName}</h2>
+                      <h2><a href={`/profile/${elem.user.id}`}>{elem.user.fName}</a></h2>
                       <img src={icon} />
                     </div>
                   </div>
