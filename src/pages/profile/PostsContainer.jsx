@@ -17,8 +17,6 @@ const PostsContainer = () => {
   const navigate = useNavigate();
   const [posts, setposts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [OptionsClicked, setOptionsClicked] = useState(true);
-  const [ElemIndex, setIndex] = useState(null);
 
   let postsReverse = [...posts].reverse();
   useEffect(() => {
@@ -30,7 +28,7 @@ const PostsContainer = () => {
       pauseOnHover: false,
     });
   };
-  const handleDeteteSub = (idpost) => {
+  const handleDetetePost = (idpost) => {
     toast.warn("Are you sure you want to delete this item?", {
       position: "top-center",
       autoClose: false,
@@ -141,26 +139,9 @@ const PostsContainer = () => {
 
                   <div
                     className="options flex  "
-                    onClick={() => {
-                      setOptionsClicked(!OptionsClicked);
-                      setIndex(elem.id);
-                    }}
+                    onClick={() => handleDetetePost(elem.id)}
                   >
-                    <BsTrash className="right-2 top-2 text-green-300 text-2xl absolute" />
-                    <div
-                      className={`${
-                        OptionsClicked && ElemIndex == elem.id
-                          ? "scale-100"
-                          : "scale-0"
-                      } optionsBtns duration-200  bg-emerald-600 right-10 top-4 p-2 rounded-xl absolute `}
-                    >
-                      <button
-                        className="StandardBtn"
-                        onClick={() => handleDeteteSub(elem.id)}
-                      >
-                        Delete post
-                      </button>
-                    </div>
+                    <BsTrash className="right-2 top-2 hover:text-dimWhite text-green-300 text-2xl absolute" />
                   </div>
                 </div>
               </div>
