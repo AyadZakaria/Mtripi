@@ -16,9 +16,15 @@
     rgba(87, 108, 117, 0.438) 0%,
     rgba(37, 50, 55, 0.459) 0%
   );
-  margin: 1em ;
+  margin: 1em;
   height: 38vh;
   overflow: hidden;
+  transition: 0.5s;
+}
+.Posts_main .card:hover {
+  background-color: var(--primary-color);
+  border: #fff;
+  transform: scale(1.1);
 }
 .Posts_main .card .Card_header {
   display: flex;
@@ -26,30 +32,36 @@
   justify-content: space-between;
   align-items: center;
 }
-.Posts_main .card .Card_header .location {
+.location {
   border: 0.05em solid var(--primary-color);
-  border-radius: .7em;
+  border-radius: 0.7em;
   padding: 0.5em;
+  cursor: pointer;
+  transition: 0.5s;
 }
-.Posts_main .card .Card_header .love{
+.location:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.Posts_main .card .Card_header .user_container {
   display: flex;
   justify-content: space-around;
   width: 25%;
   align-items: center;
 }
-.Posts_main .card .Card_header .love h2{
+.Posts_main .card .Card_header .user_container h2 {
   font-size: medium;
   text-transform: capitalize;
 }
-.Posts_main .card .Card_header .love img{
+.Posts_main .card .Card_header .user_container img {
   width: 1em;
 }
 
-.Posts_main .card .Card_header .location h2 {
+.location h2 {
   display: flex;
   align-items: center;
 }
-.Posts_main .card .Card_header .location h2 span {
+.location h2 span {
   margin-right: 0.5em;
 }
 .Posts_main .card .infos {
@@ -84,4 +96,19 @@
 
 .Posts_main .card .postImage:hover {
   top: 30%;
+}
+
+/* single post */
+
+.SinglePostMain {
+  width: 100%;
+  display: grid;
+  height: max-content;
+  grid-template-columns: 50% 50%;
+}
+.secondSection{
+  width: 100%;
+  display: grid;
+  height: max-content;
+  grid-template-columns: 50% 50%;
 }
