@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import AddPost from "./AddPostPopup";
 import EditPostPopup from "./EditPostPopup";
 
 const EditPostBtn = (props) => {

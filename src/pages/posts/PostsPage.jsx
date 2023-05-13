@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import AuthUser from "../../auth/AuthUser";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { SlLocationPin } from "react-icons/sl";
 import "./PostsStyle.css";
+import { useNavigate } from "react-router";
 import { Navbar } from "../../components";
 import { Triangle } from "react-loader-spinner";
 import { user as icon } from "../../assets";
 
 const PostsPage = () => {
-  const [Like, setLike] = useState(false);
-  const [CardIndex, setCardIndex] = useState(null);
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const { http } = AuthUser();
   const [posts, setposts] = useState([]);
@@ -24,6 +23,10 @@ const PostsPage = () => {
       console.log(res.data);
       console.log(posts);
     });
+  };
+
+  const handlePostDetails = (postid) => {
+    navigate(`/Post/${postid}`);
   };
 
   const LoadingRender = () => {
@@ -52,10 +55,16 @@ const PostsPage = () => {
           <Navbar />
         </div>
         {posts.length > 0 ? (
-          <div className="Posts_main mt-[10vh]">
+          <div className="Posts_main mt-[12vh]">
             {posts.map((elem, index) => {
               return (
-                <div className={`card ${elem.id}`} key={index}>
+                <div
+                  className={`  cursor-pointer card ${elem.id}`}
+                  onClick={() => {
+                    navigate(`/Post/${elem.id}`, { state: { post: elem } });
+                  }}
+                  key={index}
+                >
                   <div className="Card_header">
                     <div className="location">
                       <h2>
@@ -65,8 +74,12 @@ const PostsPage = () => {
                         {elem.destination}
                       </h2>
                     </div>
-                    <div className="love">
-                      <h2><a href={`/profile/${elem.user.id}`}>{elem.user.fName}</a></h2>
+                    <div className="user_container">
+                      <h2>
+                        <a href={`/profile/${elem.user.id}`}>
+                          {elem.user.fName}
+                        </a>
+                      </h2>
                       <img src={icon} />
                     </div>
                   </div>

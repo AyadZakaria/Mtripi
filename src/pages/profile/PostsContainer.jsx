@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import EditPostBtn from "../../widgets/EditPostBtn";
 
 const PostsContainer = () => {
-  const { http } = AuthUser();
+  const { http, user } = AuthUser();
   const navigate = useNavigate();
   const [posts, setposts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -78,6 +78,7 @@ const PostsContainer = () => {
   const fetchPostDetail = () => {
     http.get("/Profile").then((res) => {
       setposts(res.data);
+      console.log(res.data);
       setIsLoading(false);
     });
   };
@@ -106,7 +107,7 @@ const PostsContainer = () => {
       {posts.length > 0
         ? postsReverse.map((elem, index) => {
             return (
-              <div key={index} className="post shadow-2xl">
+              <div key={index} className="post shadow-2xl ">
                 <div className="childOne">
                   <img
                     className="w-[35vh] rounded-lg"
@@ -130,9 +131,29 @@ const PostsContainer = () => {
                     {elem.start_date}
                   </p>
                   <p className="link flex justify-between w-[9em] absolute right-2 bottom-2 text-green-300 font-light text-xs underline">
-                    <Link to={`/post/${elem.user_id}/${elem.id}`}>
+                    <p
+                      onClick={() => {
+                        navigate(`/Post/${elem.id}`, {
+                          state: {
+                            post: {
+                              id: elem.id,
+                              title: elem.title,
+                              description: elem.description,
+                              destination: elem.destination,
+                              budget: elem.budget,
+                              start_date: elem.start_date,
+                              image_path: elem.image_path,
+                              user: {
+                                id: elem.user_id,
+                                fName: user.fName || "x",
+                              },
+                            },
+                          },
+                        });
+                      }}
+                    >
                       See More
-                    </Link>{" "}
+                    </p>
                     ,
                     <EditPostBtn post={elem} label={"Edit Post"} />
                   </p>

@@ -11,7 +11,7 @@ const PublicRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/showprofile" element={<ShowProfile />} />
+      <Route path="/Profile/:id" element={<ShowProfile />} />
     </Routes>
   );
 };
