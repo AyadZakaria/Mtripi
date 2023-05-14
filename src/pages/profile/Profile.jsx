@@ -4,6 +4,7 @@ import { Navbar } from "../../components";
 import UserInfo from "./UserInfo";
 import { mountains } from "../../assets";
 import Popupbtn from "../../widgets/AddPostBtn";
+
 import "./style.css";
 
 import PostsContainer from "./PostsContainer";

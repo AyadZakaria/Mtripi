@@ -42,7 +42,7 @@ const AddPost = () => {
     console.log(userid);
     setTimeout(() => {
       window.location.reload(true);
-    }, 1000);
+    }, 2000);
 
     // http.post('/addpost', { title:title, description: description, budget: budget , start_date:startDate , destination:destination, image_path:image}).then((res) => {
     //      navigate('/profile')

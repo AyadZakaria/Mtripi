@@ -60,9 +60,7 @@ const PostsPage = () => {
               return (
                 <div
                   className={`  cursor-pointer card ${elem.id}`}
-                  onClick={() => {
-                    navigate(`/Post/${elem.id}`, { state: { post: elem } });
-                  }}
+                 
                   key={index}
                 >
                   <div className="Card_header">
@@ -74,16 +72,18 @@ const PostsPage = () => {
                         {elem.destination}
                       </h2>
                     </div>
-                    <div className="user_container">
+                    <div className="user_container border m-3 p-2" onClick={() => {
+                    navigate(`/profile/${elem.user.id}`, { state: { post: elem } });
+                  }}>
                       <h2>
-                        <a href={`/profile/${elem.user.id}`}>
                           {elem.user.fName}
-                        </a>
                       </h2>
                       <img src={icon} />
                     </div>
                   </div>
-                  <div className="infos">
+                  <div className="infos"  onClick={() => {
+                    navigate(`/Post/${elem.id}`, { state: { post: elem } });
+                  }}>
                     <h1>{elem.title}</h1>
                     <p>{elem.description}</p>
                   </div>

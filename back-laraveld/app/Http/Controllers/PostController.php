@@ -53,6 +53,24 @@ class PostController extends Controller
         return $this->returnData('post created successfully', $post); 
     }
 
+
+    public function postUpdate(Request $request,$id)
+    {   $thePost =Post::find($id);
+        $fileName = $request->file("image_path")->getClientOriginalExtension();
+        $image = Str::random() .'.'. $fileName; 
+        $image_path = $request->image_path->storeAs('images/posts/', $image, 'public');
+        
+        $thePost->title=$request->title;
+        $thePost->description=$request->description;
+        $thePost->budget=$request->budget;
+        $thePost->start_date=$request->start_date;
+        $thePost->image_path = $image;
+        $thePost->destination = $request->destination;
+        $thePost->user_id = $request->user_id;
+        $thePost->save();
+        return $this->returnData('post updated successfully', $thePost);
+    }
+
     /**
      * Display the specified resource.
      *

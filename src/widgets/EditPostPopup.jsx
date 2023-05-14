@@ -12,8 +12,9 @@ const EditPostPopup = (props) => {
   const [budget, setBudget] = useState(props.post.budget);
   const [startDate, setStartDate] = useState(props.post.start_date);
   const [destination, setDestination] = useState(props.post.destination);
-  const [img, setImage] = useState(null);
+  const [img, setImage] = useState();
 
+  let postId = props.post.id;
   const handleImgChange = (event) => {
     const selectedFile = event.target.files[0];
     setImage(selectedFile);
@@ -35,8 +36,11 @@ const EditPostPopup = (props) => {
     formdata.append("start_date", startDate);
     formdata.append("user_id", userid);
     const config = {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}`,
+    "Content-Type": "multipart/form-data" },
     };
+    axios.patch(`http://localhost:8000/api/editpost/${postId}`, formdata, config);
+    
   };
 
   return (
@@ -51,6 +55,7 @@ const EditPostPopup = (props) => {
         <div className="grid grid-cols-1 w-[40vh] space-y-2">
           <label className="text-sm font-bold text-gray-500 tracking-wide">
             Title
+            
           </label>
           <input
             className="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 text-black"
@@ -149,6 +154,7 @@ const EditPostPopup = (props) => {
               </div>
               <input
                 type="file"
+                name="image_path"
                 className="hidden"
                 onChange={handleImgChange}
               />

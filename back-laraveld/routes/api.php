@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('login', [AuthController::class,'login']);
 Route::post('signup', [AuthController::class,'registre']);
 Route::put('user/{id}',[UserController::class,'update'] );
+Route::patch('editpost/{id}',[PostController::class,'postUpdate'] );
 Route::post('addpost',[PostController::class,'store'] );
 Route::get('Profile',[PostController::class,'show'] );
 Route::get('profile/{id}',[PostController::class,'showprofile'] );

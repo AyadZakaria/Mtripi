@@ -76,7 +76,8 @@ class UserController extends Controller
             $user->email=$request->email;
             $user->phone= $request->phone;
             $user->description= $request->description;
-            $user->password=$request->password;
+            $passwordbcrypt = bcrypt($request->password);
+            $user->password=$passwordbcrypt;
             $user->instagram=$request->instagram;
             $user->save();
             return response()->json('success');
