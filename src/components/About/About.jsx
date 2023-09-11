@@ -1,4 +1,4 @@
-import { service, teem, expert, detail, consulting } from "../../assets";
+import { service, teem } from "../../assets";
 import "./about.css";
 
 const About = () => (
@@ -16,16 +16,12 @@ const About = () => (
         <img src={teem} alt="About" />
         <div className="about-desc ">
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum quis
-            enim saepe adipisci suscipit eveniet reprehenderit animi officia
-            consectetur omnis, quo ad assumenda hic iure. Aut vero enim cum
-            ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Quasi nisi iste perspiciatis! Dignissimos praesentium voluptatum
-            fuga similique maiores molestiae? Dolorum labore sequi voluptatum
-            magnam doloribus incidunt laudantium tenetur fugit quas dolorem,
-            reiciendis eaque eligendi vitae at, deleniti omnis voluptatibus
-            voluptates suscipit eveniet maxime? Vero commodi illo, pariatur
-            nobis minima debitis.
+            Welcome to M'TRIPI, the ultimate platform for hiking enthusiasts
+            looking to explore the best destinations in Morocco. We provide a
+            space for users to share personal experiences and recommendations,
+            including transportation, budgets, and other details that can make a
+            hiking trip more enjoyable. Join our community and discover the most
+            scenic trails and hidden treasures of this beautiful country.
           </p>
           <button className="about-desc-button secondaryBtn">
             {" "}
@@ -46,15 +42,15 @@ const About = () => (
       </div>
       <div className="why-body">
         <div className="cart">
-          <img src={expert} alt="icon" />
+          <img src={service} alt="icon" />
           <h3>Expertise</h3>
           <p>
             We have extensive experience in choosing best places in morocco for
             individuals all across the world.
           </p>
         </div>
-        <div className="cart">
-          <img src={detail} alt="icon" />
+        <div className="cart ">
+          <img src={service} alt="icon" />
           <h3>Attention to Detail</h3>
           <p>
             We have extensive experience in choosing best places in morocco for
@@ -62,7 +58,7 @@ const About = () => (
           </p>
         </div>
         <div className="cart">
-          <img src={consulting} alt="icon" />
+          <img src={service} alt="icon" />
           <h3>Communication</h3>
           <p>
             We have extensive experience in choosing best places in morocco for

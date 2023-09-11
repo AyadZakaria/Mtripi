@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthUser from "./AuthUser";
-import Pic2 from "../assets/authIllustrations/signupLady.png";
 import axios from "axios";
-
+import { Navbar } from "../components";
+import {signupPic} from '../assets';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -27,9 +27,12 @@ const Signup = () => {
 
   return (
     <>
-      <section className="main-signup-section">
+      {/* <div className=" w-[100%] top-0 px-20 h-fit bg-gradient-to-r from-green-300 to-transparent fixed z-10">
+        <Navbar />
+      </div> */}
+      <section className="main-signup-section text-dimWhite">
         <div className="left">
-          <img src={Pic2} alt="" />
+          
         </div>
         <div className="right">
           <h2 className="welcomeHeading">Create an account</h2>
@@ -144,6 +147,12 @@ const Signup = () => {
               </label>
             </div>
             
+            <h3 className="dontHaveAcc">
+            Already have an account ?{" "}
+            <span>
+              <Link to="/login">Log in now</Link>
+            </span>
+          </h3>
             <button type="button" onClick={submitForm} className="primaryBtn">
               Create Account
             </button>

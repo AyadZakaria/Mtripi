@@ -36,7 +36,7 @@
 }
 .main .main-body .about-desc p {
   font-size: 1.2em;
-  margin: .2em 0 1em 0 ;
+  margin: 0.2em 0 1em 0;
 }
 .main .main-body img {
   width: 35%;
@@ -52,13 +52,14 @@
   flex-direction: column;
   height: 70vh;
   justify-content: space-around;
-  margin-top:5rem ;
+  margin-top: 5rem;
 }
 .why-us .why-head {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  padding: 1em 0 1em 0;
   width: 45%;
   text-align: center;
 }
@@ -80,23 +81,32 @@
 .why-us .why-body .cart {
   width: 45%;
   border: 1px solid transparent;
+  color: #fff;
   border-radius: 1.2em;
   padding: 1.2em;
   margin: 1.5em auto;
   position: relative;
-  background-color: var(--secondary-color);
+  cursor: pointer;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(87, 108, 117, 0.438) 0%,
+    rgba(37, 50, 55, 0.459) 0%
+  );
+}
+.why-us .why-body .cart:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
 }
 .why-us .why-body .cart h3 {
-  color: var(--black);
   font-size: x-large;
   font-weight: 600;
-  margin: .9em 0 .2em 0;
+  margin: 0.9em 0 0.2em 0;
 }
-.why-us .why-body .cart p{
-    color: var(--black-gradient);
+.why-us .why-body .cart p {
+  color: var(--black-gradient);
 }
-.why-us .why-body .cart img{
-    bottom: 75%;
-    width: 4em;
-    position: absolute;
+.why-us .why-body .cart img {
+  bottom: 75%;
+  width: 4em;
+  position: absolute;
 }

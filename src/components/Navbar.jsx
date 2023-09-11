@@ -1,22 +1,20 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { close, MTRIPI, menu, user } from "../assets";
+import { close, MTRIPI, menu, user as icon } from "../assets";
 import { navLinks } from "../constants";
 import React, { useEffect } from "react";
 import AuthUser from "./auth/AuthUser";
 const Navbar = () => {
-  const { token, logout } = AuthUser();
+  const { token, user, http, setUser, logout } = AuthUser();
+  const [userdetail, setUserdetaild] = useState("");
+  const [userFirstName, setUserFirstName] = useState("");
+  const [userLastName, setUserLastName] = useState("");
+
   const LogUser = () => {
     if (token != undefined) {
       logout();
     }
   };
-  const { http } = AuthUser();
-  const [userdetail, setUserdetail] = useState();
-
-  const [IconClicked, setIconClicked] = useState(false);
-
-  const userInfoRef = useRef(null);
 
   useEffect(() => {
     fetchUserDetail();
@@ -26,16 +24,21 @@ const Navbar = () => {
     };
   }, []);
 
+  const fetchUserDetail = () => {
+    http.post("/me").then((res) => {
+      setUserdetaild(res.data);
+      setUserFirstName(res.data.fName);
+      setUserLastName(res.data.lName);
+    });
+  };
+  const [IconClicked, setIconClicked] = useState(false);
+
+  const userInfoRef = useRef(null);
+
   const handleClickOutside = (event) => {
     if (userInfoRef.current && !userInfoRef.current.contains(event.target)) {
       setIconClicked(false);
     }
-  };
-
-  const fetchUserDetail = () => {
-    http.post("/me").then((res) => {
-      setUserdetail(res.data);
-    });
   };
 
   const handleUserActions = () => {
@@ -48,7 +51,7 @@ const Navbar = () => {
         <>
           {" "}
           <div
-            className="userInfo flex select-none cursor-pointer"
+            className="userInfo flex items-center select-none cursor-pointer"
             onClick={handleUserActions}
             ref={userInfoRef}
           >
@@ -56,6 +59,16 @@ const Navbar = () => {
             <p className="text-white ml-2 font-bold text-xl">
               {" "}
               {userdetail.name}
+            <img src={icon} className="h-9" />
+            <p className="text-white ml-2 font-bold text-lg flex flex-col">
+              {userFirstName.charAt(0).toUpperCase() + userFirstName.slice(1)}{" "}
+              <span
+                className="text-green-200 font-medium text-sm"
+                style={{ marginTop: "-5px" }}
+              >
+                @
+                {userFirstName.toLowerCase() + "_" + userLastName.toLowerCase()}
+              </span>
             </p>
           </div>
           <div
@@ -76,7 +89,11 @@ const Navbar = () => {
         </>
       );
     } else {
-      return "";
+      return (
+        <button className="text-white rounded-3xl bg-emerald-600 p-3 xs:hidden lg:block ">
+          <Link to="/login"> Get Started </Link>
+        </button>
+      )
     }
   }
 
@@ -97,15 +114,10 @@ const Navbar = () => {
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <Link to={`/#${nav.id}`}>{nav.title}</Link>
           </li>
         ))}
       </ul>
-      {!userdetail && (
-        <button className="text-white bg-emerald-600 p-3 xs:hidden lg:block ">
-          <Link to="/login"> Get Started </Link>
-        </button>
-      )}{" "}
       {renderElement()}
       <div
         className="sm:hidden flex flex-1 justify-end items-center"

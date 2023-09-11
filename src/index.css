@@ -13,7 +13,7 @@
   );
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 
-  --primary-color: #92e3a9;
+  --primary-color: rgb(146, 227, 169);
   --secondary-color: rgb(247, 247, 247);
   --white: #fff;
   --black: #000;
@@ -23,6 +23,9 @@
   margin: 1em 0 0 0;
 }
 
+body {
+  background-color: #0f1014;
+}
 .primaryBtn {
   width: 100%;
   margin: 1em 0 0 0;
@@ -44,6 +47,19 @@
   color: var(--primary-color);
   font-weight: 650;
   font-size: large;
+}
+.secondaryBtn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-color: transparent;
+  text-shadow: 1px 1px 4px #7574748f;
+  transition: 0.5s;
+}
+.primaryBtn:hover {
+  background-color: var(--secondary-color);
+  border-color: transparent;
+  color: var(--primary-color);
+  transition: 0.5s;
 }
 * {
   scroll-behavior: smooth;
