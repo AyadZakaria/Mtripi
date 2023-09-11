@@ -1,3 +1,5 @@
+import React from "react";
+import FileInput from './FileInput'
 import { React, useState } from "react";
 import { upload } from "../assets";
 import { useNavigate } from "react-router";
@@ -50,6 +52,21 @@ const AddPost = () => {
   };
 
   return (
+    <div className="text-dimWhite w-1/2 m-auto">
+      <form className="flex flex-col items-center">
+        <FileInput label="Select A Picture" />
+        <label className="text-l font-bold m-1" htmlFor="desc">
+          {" "}
+          Place Description{" "}
+        </label>
+        <input
+          className="p-2 text-neutral-800 outline-none rounded-xl w-[70%] m-2"
+          type="text"
+          name="desc"
+          id="desc"
+          placeholder="Merzouga Moroccan Desert ... "
+        />
+        <button className="primaryBtn"> Share Destination</button>
     <div className="text-dimWhite justify-around flex m-2 flex-col w-full h-1/2 items-center">
       <div className="text-center m-3">
         <h2 className="mt-5 text-3xl font-bold text-gray-900">File Upload!</h2>

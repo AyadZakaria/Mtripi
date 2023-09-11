@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { close, MTRIPI, menu, user as icon } from "../assets";
 import { navLinks } from "../constants";
-import AuthUser from "../auth/AuthUser";
-
+import React, { useEffect } from "react";
+import AuthUser from "./auth/AuthUser";
 const Navbar = () => {
   const { token, user, http, setUser, logout } = AuthUser();
   const [userdetail, setUserdetaild] = useState("");
@@ -46,7 +46,7 @@ const Navbar = () => {
   };
 
   function renderElement() {
-    if (userdetail) {
+    if (!userdetail) {
       return (
         <>
           {" "}
@@ -55,6 +55,10 @@ const Navbar = () => {
             onClick={handleUserActions}
             ref={userInfoRef}
           >
+            <img src={user} />
+            <p className="text-white ml-2 font-bold text-xl">
+              {" "}
+              {userdetail.name}
             <img src={icon} className="h-9" />
             <p className="text-white ml-2 font-bold text-lg flex flex-col">
               {userFirstName.charAt(0).toUpperCase() + userFirstName.slice(1)}{" "}
@@ -66,22 +70,21 @@ const Navbar = () => {
                 {userFirstName.toLowerCase() + "_" + userLastName.toLowerCase()}
               </span>
             </p>
-            <div
-              className={`userActions ${
-                IconClicked ? "scale-100" : "scale-0"
-              } absolute duration-200  bg-emerald-600 p-4 rounded-xl z-10`}
-              style={{ top: "100%", right: 0 }}
-            >
-              <button className="primaryBtn Profile">
-                <Link to="/Profile">Profile</Link>
-              </button>
-              <button className="primaryBtn Profile">
-                <Link to="/Settings">Settings</Link>
-              </button>
-              <button className="secondaryBtn" onClick={LogUser}>
-                log out
-              </button>
-            </div>
+          </div>
+          <div
+            className={`userActions ${
+              IconClicked ? "block" : "hidden"
+            } absolute left-3/4 top-10 bg-emerald-600 p-4 rounded-xl z-10`}
+          >
+            <button className="primaryBtn Profile">
+              <Link to="/Profile">Profile</Link>
+            </button>
+            <button className="primaryBtn Profile">
+              <Link to="/Settings">Settings</Link>
+            </button>
+            <button className="secondaryBtn" onClick={LogUser}>
+              log out
+            </button>
           </div>
         </>
       );
@@ -98,7 +101,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full relative flex py-6 justify-between items-center navbar">
+    <nav className="w-full flex py-6 justify-between items-center navbar">
       <Link to="/">
         <img src={MTRIPI} alt="mtripilogo" className="w-[124px] h-[32px]" />
       </Link>
